@@ -22,7 +22,7 @@ jobs:
       - name: Run JMeter Test
         run: |
           mkdir -p results reports
-          ./jmeter/bin/jmeter -n -t test-plans/task4_stress.jmx -l results/results.jtl -e -o reports/html-report
+          ./jmeter/bin/jmeter -n -t test-plans/task4_endurance.jmx -l results/results.jtl -e -o reports/html-report
       - name: Upload HTML Report
         uses: actions/upload-artifact@v4
         with:
