@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6.3">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="basic_load_test">
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath">C:\Users\polar\OneDrive\Рабочий стол\ЯПЗТ\lab13\jmeter-performance-testing\test-plans</stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group">
+        <intProp name="ThreadGroup.num_threads">10</intProp>
+        <intProp name="ThreadGroup.ramp_time">5</intProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <stringProp name="LoopController.loops">5</stringProp>
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+        </elementProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP Request">
+          <stringProp name="HTTPSampler.domain">the-internet.herokuapp.com</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.path">/</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+        </HTTPSamplerProxy>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\polar\OneDrive\Рабочий стол\ЯПЗТ\lab13\jmeter-performance-testing\test-plans\basic_load_test.jmx</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\polar\OneDrive\Рабочий стол\ЯПЗТ\lab13\jmeter-performance-testing\test-plans\basic_load_test.jmx</stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename">C:\Users\polar\OneDrive\Рабочий стол\ЯПЗТ\lab13\jmeter-performance-testing\test-plans\basic_load_test.jmx</stringProp>
+        </ResultCollector>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
+1779490968172,555,HTTP Request,200,OK,Thread Group 1-1,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,547,0,418
+1779490968743,116,HTTP Request,200,OK,Thread Group 1-1,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,116,0,0
+1779490968860,118,HTTP Request,200,OK,Thread Group 1-1,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,117,0,0
+1779490968979,118,HTTP Request,200,OK,Thread Group 1-1,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,117,0,0
+1779490968630,470,HTTP Request,200,OK,Thread Group 1-2,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,470,0,354
+1779490969097,132,HTTP Request,200,OK,Thread Group 1-1,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,118,0,0
+1779490969101,136,HTTP Request,200,OK,Thread Group 1-2,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,136,0,0
+1779490969238,115,HTTP Request,200,OK,Thread Group 1-2,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,115,0,0
+1779490969353,115,HTTP Request,200,OK,Thread Group 1-2,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,115,0,0
+1779490969469,117,HTTP Request,200,OK,Thread Group 1-2,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,117,0,0
+1779490969128,483,HTTP Request,200,OK,Thread Group 1-3,text,true,,5376,128,1,1,https://the-internet.herokuapp.com/,482,0,362
+1779490969612,122,HTTP Request,200,OK,Thread Group 1-3,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,121,0,0
+1779490969735,119,HTTP Request,200,OK,Thread Group 1-3,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,118,0,0
+1779490969855,119,HTTP Request,200,OK,Thread Group 1-3,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,118,0,0
+1779490969975,119,HTTP Request,200,OK,Thread Group 1-3,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,118,0,0
+1779490969627,512,HTTP Request,200,OK,Thread Group 1-4,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,510,0,381
+1779490970142,128,HTTP Request,200,OK,Thread Group 1-4,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,128,0,0
+1779490970271,127,HTTP Request,200,OK,Thread Group 1-4,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,126,0,0
+1779490970398,127,HTTP Request,200,OK,Thread Group 1-4,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,127,0,0
+1779490970127,508,HTTP Request,200,OK,Thread Group 1-5,text,true,,5372,128,3,3,https://the-internet.herokuapp.com/,508,0,382
+1779490970526,128,HTTP Request,200,OK,Thread Group 1-4,text,true,,5372,128,3,3,https://the-internet.herokuapp.com/,127,0,0
+1779490970636,126,HTTP Request,200,OK,Thread Group 1-5,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,126,0,0
+1779490970763,131,HTTP Request,200,OK,Thread Group 1-5,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,130,0,0
+1779490970894,125,HTTP Request,200,OK,Thread Group 1-5,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,125,0,0
+1779490970628,496,HTTP Request,200,OK,Thread Group 1-6,text,true,,5384,128,2,2,https://the-internet.herokuapp.com/,495,0,371
+1779490971020,126,HTTP Request,200,OK,Thread Group 1-5,text,true,,5384,128,3,3,https://the-internet.herokuapp.com/,126,0,0
+1779490971124,125,HTTP Request,200,OK,Thread Group 1-6,text,true,,5384,128,2,2,https://the-internet.herokuapp.com/,125,0,0
+1779490971249,128,HTTP Request,200,OK,Thread Group 1-6,text,true,,5384,128,2,2,https://the-internet.herokuapp.com/,128,0,0
+1779490971378,125,HTTP Request,200,OK,Thread Group 1-6,text,true,,5384,128,2,2,https://the-internet.herokuapp.com/,125,0,0
+1779490971125,489,HTTP Request,200,OK,Thread Group 1-7,text,true,,5384,128,2,2,https://the-internet.herokuapp.com/,489,0,368
+1779490971504,133,HTTP Request,200,OK,Thread Group 1-6,text,true,,5384,128,3,3,https://the-internet.herokuapp.com/,128,0,0
+1779490971615,123,HTTP Request,200,OK,Thread Group 1-7,text,true,,5384,128,2,2,https://the-internet.herokuapp.com/,123,0,0
+1779490971739,122,HTTP Request,200,OK,Thread Group 1-7,text,true,,5384,128,2,2,https://the-internet.herokuapp.com/,121,0,0
+1779490971862,124,HTTP Request,200,OK,Thread Group 1-7,text,true,,5384,128,2,2,https://the-internet.herokuapp.com/,123,0,0
+1779490971986,124,HTTP Request,200,OK,Thread Group 1-7,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,123,0,0
+1779490971627,527,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,527,0,399
+1779490972155,127,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,127,0,0
+1779490972283,126,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,126,0,0
+1779490972410,127,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,127,0,0
+1779490972128,525,HTTP Request,200,OK,Thread Group 1-9,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,524,0,377
+1779490972538,126,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,126,0,0
+1779490972653,123,HTTP Request,200,OK,Thread Group 1-9,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,122,0,0
+1779490972776,133,HTTP Request,200,OK,Thread Group 1-9,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,133,0,0
+1779490972911,124,HTTP Request,200,OK,Thread Group 1-9,text,true,,5380,128,2,2,https://the-internet.herokuapp.com/,124,0,0
+1779490972651,502,HTTP Request,200,OK,Thread Group 1-10,text,true,,5380,128,2,2,https://the-internet.herokuapp.com/,501,0,379
+1779490973036,123,HTTP Request,200,OK,Thread Group 1-9,text,true,,5380,128,2,2,https://the-internet.herokuapp.com/,123,0,0
+1779490973153,122,HTTP Request,200,OK,Thread Group 1-10,text,true,,5380,128,1,1,https://the-internet.herokuapp.com/,122,0,0
+1779490973276,121,HTTP Request,200,OK,Thread Group 1-10,text,true,,5380,128,1,1,https://the-internet.herokuapp.com/,120,0,0
+1779490973398,121,HTTP Request,200,OK,Thread Group 1-10,text,true,,5380,128,1,1,https://the-internet.herokuapp.com/,121,0,0
+1779490973520,123,HTTP Request,200,OK,Thread Group 1-10,text,true,,5380,128,1,1,https://the-internet.herokuapp.com/,123,0,0
+1779491143795,872,HTTP Request,200,OK,Thread Group 1-1,text,true,,5380,128,2,2,https://the-internet.herokuapp.com/,864,0,720
+1779491144217,536,HTTP Request,200,OK,Thread Group 1-2,text,true,,5380,128,3,3,https://the-internet.herokuapp.com/,536,0,407
+1779491144670,137,HTTP Request,200,OK,Thread Group 1-1,text,true,,5380,128,3,3,https://the-internet.herokuapp.com/,136,0,0
+1779491144754,131,HTTP Request,200,OK,Thread Group 1-2,text,true,,5380,128,3,3,https://the-internet.herokuapp.com/,130,0,0
+1779491144808,127,HTTP Request,200,OK,Thread Group 1-1,text,true,,5380,128,3,3,https://the-internet.herokuapp.com/,126,0,0
+1779491144886,128,HTTP Request,200,OK,Thread Group 1-2,text,true,,5380,128,3,3,https://the-internet.herokuapp.com/,127,0,0
+1779491144937,128,HTTP Request,200,OK,Thread Group 1-1,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,127,0,0
+1779491145015,131,HTTP Request,200,OK,Thread Group 1-2,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,130,0,0
+1779491145066,129,HTTP Request,200,OK,Thread Group 1-1,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,128,0,0
+1779491144713,531,HTTP Request,200,OK,Thread Group 1-3,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,531,0,401
+1779491145149,130,HTTP Request,200,OK,Thread Group 1-2,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,129,0,0
+1779491145246,128,HTTP Request,200,OK,Thread Group 1-3,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,128,0,0
+1779491145376,127,HTTP Request,200,OK,Thread Group 1-3,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,127,0,0
+1779491145503,130,HTTP Request,200,OK,Thread Group 1-3,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,128,0,0
+1779491145214,516,HTTP Request,200,OK,Thread Group 1-4,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,516,0,392
+1779491145633,132,HTTP Request,200,OK,Thread Group 1-3,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,131,0,0
+1779491145732,126,HTTP Request,200,OK,Thread Group 1-4,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,125,0,0
+1779491145859,129,HTTP Request,200,OK,Thread Group 1-4,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,129,0,0
+1779491145991,130,HTTP Request,200,OK,Thread Group 1-4,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,129,0,0
+1779491146124,128,HTTP Request,200,OK,Thread Group 1-4,text,true,,5372,128,3,3,https://the-internet.herokuapp.com/,127,0,0
+1779491145710,548,HTTP Request,200,OK,Thread Group 1-5,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,548,0,407
+1779491146260,129,HTTP Request,200,OK,Thread Group 1-5,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,128,0,0
+1779491146390,129,HTTP Request,200,OK,Thread Group 1-5,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,129,0,0
+1779491146521,129,HTTP Request,200,OK,Thread Group 1-5,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,128,0,0
+1779491146211,534,HTTP Request,200,OK,Thread Group 1-6,text,true,,5372,128,3,3,https://the-internet.herokuapp.com/,533,0,403
+1779491146650,133,HTTP Request,200,OK,Thread Group 1-5,text,true,,5372,128,3,3,https://the-internet.herokuapp.com/,133,0,0
+1779491146747,128,HTTP Request,200,OK,Thread Group 1-6,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,127,0,0
+1779491146876,130,HTTP Request,200,OK,Thread Group 1-6,text,true,,5372,128,2,2,https://the-internet.herokuapp.com/,130,0,0
+1779491147007,128,HTTP Request,200,OK,Thread Group 1-6,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,128,0,0
+1779491146710,497,HTTP Request,200,OK,Thread Group 1-7,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,497,0,373
+1779491147136,128,HTTP Request,200,OK,Thread Group 1-6,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,127,0,0
+1779491147211,120,HTTP Request,200,OK,Thread Group 1-7,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,119,0,0
+1779491147336,119,HTTP Request,200,OK,Thread Group 1-7,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,118,0,0
+1779491147456,162,HTTP Request,200,OK,Thread Group 1-7,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,162,0,0
+1779491147215,514,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,514,0,388
+1779491147619,117,HTTP Request,200,OK,Thread Group 1-7,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,115,0,0
+1779491147730,127,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,127,0,0
+1779491147858,126,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,125,0,0
+1779491147984,126,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,126,0,0
+1779491147708,480,HTTP Request,200,OK,Thread Group 1-9,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,480,0,360
+1779491148111,126,HTTP Request,200,OK,Thread Group 1-8,text,true,,5376,128,3,3,https://the-internet.herokuapp.com/,126,0,0
+1779491148188,122,HTTP Request,200,OK,Thread Group 1-9,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,122,0,0
+1779491148311,121,HTTP Request,200,OK,Thread Group 1-9,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,121,0,0
+1779491148433,122,HTTP Request,200,OK,Thread Group 1-9,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,122,0,0
+1779491148556,121,HTTP Request,200,OK,Thread Group 1-9,text,true,,5376,128,2,2,https://the-internet.herokuapp.com/,120,0,0
+1779491148222,487,HTTP Request,200,OK,Thread Group 1-10,text,true,,5376,128,1,1,https://the-internet.herokuapp.com/,487,0,364
+1779491148710,124,HTTP Request,200,OK,Thread Group 1-10,text,true,,5376,128,1,1,https://the-internet.herokuapp.com/,124,0,0
+1779491148836,123,HTTP Request,200,OK,Thread Group 1-10,text,true,,5376,128,1,1,https://the-internet.herokuapp.com/,123,0,0
+1779491148959,125,HTTP Request,200,OK,Thread Group 1-10,text,true,,5380,128,1,1,https://the-internet.herokuapp.com/,123,0,0
+1779491149085,125,HTTP Request,200,OK,Thread Group 1-10,text,true,,5380,128,1,1,https://the-internet.herokuapp.com/,125,0,0
